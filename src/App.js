@@ -1,25 +1,30 @@
-import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom'
+import {Link, Route, Routes} from 'react-router-dom'
 import HelloReactApp from './components/HelloReactApp';
+import CustomRouter from "./components/main/custom_router";
+import {createBrowserHistory} from "history";
+
 
 const Header = () => (
     <div>
         <Link to='/'>home</Link><br/>
-        <Link to='/hello-react/react'>use react</Link>
+        <Link to='/hello-react/react'>use react</Link> <br/>
+        <Link to='/hello-react/'>use react home</Link>
     </div>
 )
 
 function App() {
+    const history = createBrowserHistory();
     return (
         <>
-            <Router>
+            <CustomRouter history={history}>
                 <h3>Container Routing</h3> <br/>
                 <Header/>
                 <hr/>
                 <Routes>
                     <Route path={"/"} element={<div>Heyoooo, Home</div>}/>
                 </Routes>
-            </Router>
-            <HelloReactApp/>
+            </CustomRouter>
+            <HelloReactApp history={history}/>
         </>
     )
 }
