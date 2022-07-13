@@ -4,20 +4,23 @@ import HelloReactApp from './components/HelloReactApp';
 const Header = () => (
     <div>
         <Link to='/'>home</Link><br/>
-        <Link to='/react'>use react</Link>
+        <Link to='/hello-react/react'>use react</Link>
     </div>
 )
 
 function App() {
     return (
-        <Router>
-            dsfsdfsdfdsfdsfds <br/>
-            <Header/>
-            <hr/>
-           {/* <Routes>
-                <Route path="/" element={<HelloReactApp/>}/>
-            </Routes>*/}
-        </Router>
+        <>
+            <Router>
+                <h3>Container Routing</h3> <br/>
+                <Header/>
+                <hr/>
+                <Routes>
+                    <Route path={"/"} element={<div>Heyoooo, Home</div>}/>
+                </Routes>
+            </Router>
+            <HelloReactApp/>
+        </>
     )
 }
 
