@@ -1,14 +1,14 @@
 import {mount} from 'helloReact/HelloReactApp'
 import React, {useEffect, useRef} from 'react'
 
-let historyUnlistener
+let historyUnListener
 const HelloReactApp = ({history}) => {
     const ref = useRef(null);
 
     useEffect(() => {
-        if (historyUnlistener)
-            historyUnlistener();
-        historyUnlistener = history.listen(() => {
+        if (historyUnListener)
+            historyUnListener();
+        historyUnListener = history.listen(() => {
             mount(ref.current)
         })
         mount(ref.current)
