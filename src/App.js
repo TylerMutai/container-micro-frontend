@@ -22,6 +22,7 @@ function App() {
                 <hr/>
                 <Routes>
                     <Route path={"/"} element={<div>Heyoooo, Home</div>}/>
+                    <Route path={"*"} element={<></>}/>
                 </Routes>
             </CustomRouter>
             <HelloReactApp history={history}/>
